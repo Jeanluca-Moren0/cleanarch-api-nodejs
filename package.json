@@ -2,6 +2,7 @@
   "name": "cleanarch-api-nodejs",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -10,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "express": "^4.17.3",
     "husky": "^7.0.4",
     "jest": "^27.5.1",
     "lint-staged": "^12.3.7",
+    "mongoose": "^6.2.10",
     "standard": "^16.0.4"
   }
 }
