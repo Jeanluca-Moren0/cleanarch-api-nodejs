@@ -5,9 +5,10 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --silent --verbose --noStackTrace",
-    "test:staged": "jest  --passWithNoTests --findRelatedTests --silent --noStackTrace",
-    "test:ci": "jest --coverage --noStackTrace --silent"
+    "test": "jest --silent --verbose --noStackTrace --passWithNoTests",
+    "test:unit": "npm test -- --watch",
+    "test:staged": "npm test -- --findRelatedTests ./*",
+    "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
   "standard": {
