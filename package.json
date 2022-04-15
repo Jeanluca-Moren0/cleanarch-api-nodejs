@@ -20,8 +20,9 @@
   "author": "Jeanluca-Moren0",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
     "mongoose": "^6.2.10",
-    "express": "^4.17.3"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "husky": "^7.0.0",
