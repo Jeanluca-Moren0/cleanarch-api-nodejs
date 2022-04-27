@@ -27,7 +27,7 @@ describe('Encrypter', () => {
     expect(bcrypt.hash).toBe('hashed_value')
   })
 
-  test('should throw if no params are provided', () => {
+  test('should throw if no params are provided', async () => {
     const sut = makeSut()
 
     expect(sut.compare()).rejects.toThrow(new MissingParamError('value'))

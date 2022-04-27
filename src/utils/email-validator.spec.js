@@ -1,5 +1,6 @@
 const EmailValidator = require('./email-validator')
 const validator = require('validator')
+const { MissingParamError } = require('./errors')
 
 const makeSut = () => {
   return new EmailValidator()
@@ -23,5 +24,11 @@ describe('Email Validator', () => {
     const sut = makeSut()
     sut.isValid('any@email.com')
     expect(validator.email).toBe('any@email.com')
+  })
+
+  test('should throw if no email is provided', async () => {
+    const sut = makeSut()
+
+    expect(() => { sut.isValid() }).toThrow(new MissingParamError('email'))
   })
 })
