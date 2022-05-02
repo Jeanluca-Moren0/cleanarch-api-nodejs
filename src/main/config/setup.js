@@ -6,5 +6,4 @@ module.exports = app => {
   app.use(cors)
   app.use(jsonParser)
   app.use(contentType)
- 
 }
