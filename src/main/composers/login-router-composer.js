@@ -5,6 +5,7 @@ const LoadUserByEmailRepository = require('../../infra/repositories/load-user-by
 const UpdateAccessTokenRepository = require('../../infra/repositories/update-access-token-repository')
 const Encrypter = require('../../presentation/helpers/encrypter')
 const TokenGenerator = require('../../presentation/helpers/token-generator')
+require('dotenv').config()
 
 const encrypter = new Encrypter()
 const tokenGenerator = new TokenGenerator(process.env.tokenSecret)
