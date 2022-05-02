@@ -2,8 +2,7 @@ const sut = require('./mongo-helper')
 
 describe('Mongo Helper', () => {
   beforeAll(async () => {
-    await sut.connect(process.env.MONGO_URI)
-    
+    await sut.connect(process.env.MONGO_URL)
   })
 
   afterAll(async () => {

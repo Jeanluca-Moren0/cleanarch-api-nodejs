@@ -9,7 +9,7 @@ const makeSut = () => {
 
 describe('UpdateAccessToken Repository', () => {
   beforeAll(async () => {
-    await MongoHelper.connect(global.__MONGO_URI__,)
+    await MongoHelper.connect(process.env.MONGO_URL)
     userModel = await MongoHelper.getCollection('users')
   })
 
@@ -22,7 +22,7 @@ describe('UpdateAccessToken Repository', () => {
       state: 'any_state',
       password: 'hashed_password'
     })
-    fakeUserId = fakeUser.insertedId
+    fakeUserId = fakeUser.ops[0]._id
   })
 
   afterAll(async () => {
@@ -40,4 +40,5 @@ describe('UpdateAccessToken Repository', () => {
     const sut = makeSut()
     expect(sut.update()).rejects.toThrow(new MissingParamError('userId'))
     expect(sut.update(fakeUserId)).rejects.toThrow(new MissingParamError('accessToken'))
-  })})
+  })
+})
