@@ -1,5 +1,5 @@
 const validator = require('validator')
-const { MissingParamError } = require('../utils/errors')
+const { MissingParamError } = require('../errors')
 class EmailValidator {
   isValid (email) {
     if (!email) {
